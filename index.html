@@ -9,11 +9,19 @@
   <body style="background-color: rgb(90, 128, 128)">
     <script>
       //console.log(a);//not defined
-      console.log(b);//undeifned
+      //console.log(b);//undeifned
       var b;
-      console.log(b); //undeifned
+     // console.log(b); //undeifned
       b=10;
-      console.log(b);//10
+     // console.log(b);//10
+      function myfunction() {
+        console.log(b);//10, undefined
+        b=20;
+        console.log(b);//20
+        var b=30;
+      }
+      myfunction();
+      console.log(b);//20, 20 , 10
     </script>
   </body>
 </html>
