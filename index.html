@@ -8,20 +8,28 @@
   </head>
   <body style="background-color: rgb(90, 128, 128)">
     <script>
-      //console.log(a);//not defined
-      //console.log(b);//undeifned
-      var b;
-     // console.log(b); //undeifned
-      b=10;
-     // console.log(b);//10
-      function myfunction() {
-        console.log(b);//10, undefined
-        b=20;
-        console.log(b);//20
-        var b=30;
+      //console.log(a);//not defined, cannot access before initialization
+      let a;
+      //console.log(a);//undefined
+      a = 10;
+      console.log(a); //10
+      //let a;//syntax alredy been declared
+      a = 20;
+      console.log(a); //20
+      function myFunction() {
+        // console.log(a);//20, cannot access before initialization
+        // a=30; //this will consider as a globel variable
+        // console.log(a)//30, //cannot access before initialization
+        let a = 40;
+        console.log(a);//40
+        if(true){
+          let a=50;
+          console.log(a);//40, 50
+        }
+        console.log(a);//40
       }
-      myfunction();
-      console.log(b);//20, 20 , 10
+      myFunction();
+      console.log(a); //20, 30
     </script>
   </body>
 </html>
